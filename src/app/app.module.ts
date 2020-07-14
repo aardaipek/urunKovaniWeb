@@ -10,6 +10,7 @@ import { CategoriesComponent } from './components/home/categories/categories.com
 import { FeaturedProductsComponent } from './components/home/featured-products/featured-products.component';
 import { FooterComponent } from './components/home/footer/footer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
