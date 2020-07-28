@@ -14,6 +14,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { BreadcrumbHeroComponent } from './components/shop/breadcrumb-hero/breadcrumb-hero.component';
 import { ShopDetailComponent } from './pages/shop/shop-detail/shop-detail.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { ShopDetailComponent } from './pages/shop/shop-detail/shop-detail.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
