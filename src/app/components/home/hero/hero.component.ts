@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,defineInjectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {AppService} from "../../../app.service"
 
 
 @Component({
@@ -11,17 +12,19 @@ export class HeroComponent implements OnInit {
   Menus : object;
   MenuCount : number;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,public appService : AppService) { 
+    
+  }
+
+  async getMenus(){
+    this.Menus = await this.appService.getBaseMenus();
 
   }
 
   ngOnInit(): void {
-    this.http.get ( 'https://localhost:44388/api/app/base_menu/3')
-    .subscribe (data => {  
-     this.Menus = data; 
-     this.MenuCount = Object.keys(data).length;
-    }) 
+    this.getMenus();
   }
 
+ 
  
 }
