@@ -3,12 +3,11 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="hero__categories">
-                    <div class="hero__categories__all">
+                    <div class="hero__categories__all" (click)="categoryClose(categoryShow);">
                         <i class="fa fa-bars"></i>
-                        <span>Kategoriler </span>
-                        <span>{{MenuCount}}</span>
+                        <span>Kategoriler</span>
                     </div>
-                    <ul>
+                    <ul *ngIf="categoryShow">
                         <li *ngFor="let menu of sideMenu"><a href="#">{{menu.category_name}}</a></li>                       
                     </ul>
                 </div>
@@ -33,16 +32,12 @@
                         </div>
                     </div>
                 </div>
-                <img src="../assets/header.png" alt="">
-                <!-- <div class="hero__item set-bg" data-setbg="..\common\img\hero\banner.jpg">
-                    <div class="hero__text">
-                        <span>FRUIT FRESH</span>
-                        <h2>Vegetable <br />100% Organic</h2>
-                        <p>Free Pickup and Delivery Available</p>
-                        <a href="#" class="primary-btn">SHOP NOW</a>
-                    </div>
-                </div> -->
+                <img src="../assets/header.png" alt="" *ngIf="!url">
+
             </div>
         </div>
+
     </div>
+    <img src="../assets/common/img/breadcrumb.jpg" alt="" *ngIf="url">
+
 </section>
