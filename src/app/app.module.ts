@@ -9,6 +9,14 @@ import { HeroComponent } from './components/home/hero/hero.component';
 import { CategoriesComponent } from './components/home/categories/categories.component';
 import { FeaturedProductsComponent } from './components/home/featured-products/featured-products.component';
 import { FooterComponent } from './components/home/footer/footer.component';
+import { ShopComponent } from './pages/shop/shop.component';
+import { HomeComponent } from './pages/home/home.component';
+import { BreadcrumbHeroComponent } from './components/shop/breadcrumb-hero/breadcrumb-hero.component';
+import { ShopDetailComponent } from './pages/shop/shop-detail/shop-detail.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -18,11 +26,16 @@ import { FooterComponent } from './components/home/footer/footer.component';
     HeroComponent,
     CategoriesComponent,
     FeaturedProductsComponent,
-    FooterComponent
+    FooterComponent,
+    ShopComponent,
+    HomeComponent,
+    BreadcrumbHeroComponent,
+    ShopDetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
