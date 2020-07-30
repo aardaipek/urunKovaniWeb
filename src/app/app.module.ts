@@ -16,6 +16,7 @@ import { ShopDetailComponent } from './pages/shop/shop-detail/shop-detail.compon
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
