@@ -5,11 +5,11 @@
                 <div class="hero__categories">
                     <div class="hero__categories__all">
                         <i class="fa fa-bars"></i>
-                        <span>Menü </span>
+                        <span>Kategoriler </span>
                         <span>{{MenuCount}}</span>
                     </div>
                     <ul>
-                        <li *ngFor="let menu of Menus"><a href="#">{{menu.category_name}}</a></li>                       
+                        <li *ngFor="let menu of sideMenu"><a href="#">{{menu.category_name}}</a></li>                       
                     </ul>
                 </div>
             </div>

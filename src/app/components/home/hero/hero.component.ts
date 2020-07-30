@@ -9,7 +9,7 @@ import {AppService} from "../../../app.service"
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
-  Menus : object;
+  sideMenu : object;
   MenuCount : number;
 
   constructor(private http: HttpClient,public appService : AppService) { 
@@ -17,7 +17,7 @@ export class HeroComponent implements OnInit {
   }
 
   async getMenus(){
-    this.Menus = await this.appService.getBaseMenus();
+    this.sideMenu = await this.appService.getSideMenu();
 
   }
 
