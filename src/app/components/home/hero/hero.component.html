@@ -38,6 +38,7 @@
         </div>
 
     </div>
-    <img src="../assets/common/img/breadcrumb.jpg" alt="" *ngIf="url">
+    <div *ngIf="url" style="background-image:url('../assets/common/img/breadcrumb.jpg');height: 140px;color: white;text-align: center;align-items: center;display: flex;justify-content: center;font-family: sans-serif;    font-size: 30px;">
+        {{url}}</div>
 
 </section>
