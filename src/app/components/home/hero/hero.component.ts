@@ -1,4 +1,4 @@
-import { Component, OnInit,defineInjectable } from '@angular/core';
+import { Component, OnInit,Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {AppService} from "../../../app.service"
 import {ActivatedRoute} from '@angular/router';
@@ -9,11 +9,10 @@ import {ActivatedRoute} from '@angular/router';
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css']
 })
-export class HeroComponent implements OnInit {
-  sideMenu : object;
-  MenuCount : number;
+export class HeroComponent {
   categoryShow : boolean;
   url : string;
+  @Input() sideMenus: object;
 
   constructor(private http: HttpClient,public appService : AppService,public route: ActivatedRoute) { 
     
@@ -26,13 +25,7 @@ export class HeroComponent implements OnInit {
     this.categoryShow = true;
   }
 
-  async getMenus(){
-    this.sideMenu = await this.appService.getSideMenu();
-
-  }
-
   ngOnInit(): void {
-    this.getMenus();
     this.url = this.route.routeConfig.path;
 
     if(!this.url)

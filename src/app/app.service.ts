@@ -29,5 +29,12 @@ export class AppService {
     const mainMenu = response; 
     return mainMenu;
   }
+
+  async getAppSettings(){
+    const response = await this.http.get(this.url + '/api/app/app_settings/1').toPromise();
+    const appSettings = JSON.parse(response[0]["content"]);
+   
+    return appSettings;
+  }
   
 }
