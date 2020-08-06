@@ -8,7 +8,7 @@
                         <span>Kategoriler</span>
                     </div>
                     <ul *ngIf="categoryShow">
-                        <li *ngFor="let menu of sideMenu"><a href="#">{{menu.category_name}}</a></li>                       
+                        <li *ngFor="let menu of sideMenu"><a href="#">{{menu.category_name}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -16,15 +16,41 @@
                 <div class="hero__search">
                     <div class="hero__search__form">
                         <form action="#">
-                        
+
                             <input type="text" placeholder="Ürün,kategori veya marka ara">
                             <button type="submit" class="site-btn">Arama</button>
                         </form>
                     </div>
-                    <div class="header__cart" >
+                    <div class="header__cart">
                         <ul style="padding-left: 3%;
                         padding-top: 1.5%;">
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            <li>
+                                <a><i class="fa fa-heart" data-toggle="modal" data-target="#exampleModal"></i>
+                                    <span>1</span></a>
+                            </li>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Beğendiğin Ürünler</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <ul *ngIf="categoryShow">
+                                                <li *ngFor="let menu of sideMenu" style="display:flex;flex-direction:column" ><a href="#">{{menu.category_name}}</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                                onclick="closeModal()">Kapat</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__top__right__auth" style="padding-left: 3%;">
@@ -38,7 +64,8 @@
         </div>
 
     </div>
-    <div *ngIf="url" style="background-image:url('../assets/common/img/breadcrumb.jpg');height: 140px;color: white;text-align: center;align-items: center;display: flex;justify-content: center;font-family: sans-serif;    font-size: 30px;">
+    <div *ngIf="url"
+        style="background-image:url('../assets/common/img/breadcrumb.jpg');height: 140px;color: white;text-align: center;align-items: center;display: flex;justify-content: center;font-family: sans-serif;    font-size: 30px;">
         {{url}}</div>
 
 </section>

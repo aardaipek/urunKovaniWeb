@@ -1,7 +1,8 @@
-import { Component, OnInit,defineInjectable } from '@angular/core';
+import { Component, OnInit, defineInjectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {AppService} from "../../../app.service"
-import {ActivatedRoute} from '@angular/router';
+import { AppService } from "../../../app.service"
+import { ActivatedRoute } from '@angular/router';
+
 
 
 @Component({
@@ -10,23 +11,27 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
-  sideMenu : object;
-  MenuCount : number;
-  categoryShow : boolean;
-  url : string;
+  sideMenu: object;
+  MenuCount: number;
+  categoryShow: boolean;
+  url: string;
+  isModalAvailable: boolean = false;
 
-  constructor(private http: HttpClient,public appService : AppService,public route: ActivatedRoute) { 
-    
+  constructor(
+    private http: HttpClient,
+    public appService: AppService,
+    public route: ActivatedRoute
+  ) {
   }
 
-  categoryClose(categoryStatus){
-    if(categoryStatus)
-    this.categoryShow= false;
+  categoryClose(categoryStatus) {
+    if (categoryStatus)
+      this.categoryShow = false;
     else
-    this.categoryShow = true;
+      this.categoryShow = true;
   }
 
-  async getMenus(){
+  async getMenus() {
     this.sideMenu = await this.appService.getSideMenu();
 
   }
@@ -35,11 +40,18 @@ export class HeroComponent implements OnInit {
     this.getMenus();
     this.url = this.route.routeConfig.path;
 
-    if(!this.url)
-    this.categoryShow = true;
+    if (!this.url)
+      this.categoryShow = true;
+  }
+ 
 
+  openModal(){
+    this.isModalAvailable = true;
   }
 
- 
- 
+  closeModal(){
+    this.isModalAvailable = false;
+  }
+
 }
+

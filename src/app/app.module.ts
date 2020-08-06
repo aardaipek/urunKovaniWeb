@@ -15,6 +15,12 @@ import { BreadcrumbHeroComponent } from './components/shop/breadcrumb-hero/bread
 import { ShopDetailComponent } from './pages/shop/shop-detail/shop-detail.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Angular Material 
+// TODO: İlerisi için angular material modulleri ayrı bir service veya classtan çekilebilir.
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -31,12 +37,15 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     BreadcrumbHeroComponent,
     ShopDetailComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
