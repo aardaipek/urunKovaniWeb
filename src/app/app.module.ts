@@ -13,6 +13,8 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BreadcrumbHeroComponent } from './components/shop/breadcrumb-hero/breadcrumb-hero.component';
 import { ShopDetailComponent } from './pages/shop/shop-detail/shop-detail.component';
+import { ShopCartComponent } from './pages/shop/shoping-cart/shoping-cart.component';
+
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -30,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     ShopComponent,
     HomeComponent,
     BreadcrumbHeroComponent,
-    ShopDetailComponent
+    ShopDetailComponent,
+    ShopCartComponent
   ],
   imports: [
     BrowserModule,
