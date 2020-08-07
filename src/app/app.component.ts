@@ -9,8 +9,8 @@ import {AppService} from "../app/app.service"
 export class AppComponent {
   mainMenu :object; 
   message : string;
-  @Output() sideMenu = new EventEmitter();
-
+  sideMenu : object;
+  
   constructor(public appService : AppService) { 
     
   }

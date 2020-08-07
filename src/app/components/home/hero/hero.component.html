@@ -3,12 +3,12 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="hero__categories">
-                    <div class="hero__categories__all" (click)="categoryClose(categoryShow);">
+                    <div class="hero__categories__all" (click)="sideMenuClose(sideMenuShow);">
                         <i class="fa fa-bars"></i>
                         <span>Kategoriler</span>
                     </div>
-                    <ul *ngIf="categoryShow">
-                        <li *ngFor="let menu of sideMenus"><a href="#">{{menu.category_name}}</a></li>                       
+                    <ul *ngIf="sideMenuShow">
+                        <li *ngFor="let menu of sideMenu"><a href="#">{{menu.name}}</a></li>                       
                     </ul>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <ul *ngIf="categoryShow">
+                                            <ul *ngIf="sideMenuShow">
                                                 <li *ngFor="let menu of sideMenus" style="display:flex;flex-direction:column" ><a href="#">{{menu.category_name}}</a></li>
                                             </ul>
                                         </div>

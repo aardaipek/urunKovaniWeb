@@ -8,16 +8,21 @@ import {AppService} from "../../../app.service"
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  @Input() mainMenus: object;
+  mainMenu : object;
 
   constructor(private http: HttpClient,public appService : AppService) { 
 
 
   }
   
+  async mainMenuGet(){
+    let appSettings = await this.appService.getAppSettings();
+    this.mainMenu = appSettings["main_menu"];
 
+  }
 
   ngOnInit(): void {
+    this.mainMenuGet();
   }
 
 }

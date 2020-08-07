@@ -18,17 +18,17 @@ export class AppService {
   }
 
 
-  async getSideMenu(){
-    const response = await this.http.get(this.url + '/api/app/side_menu/3').toPromise();
-    const sideMenu = response; 
-    return sideMenu;
-  }
+  // async getSideMenu(){
+  //   const response = await this.http.get(this.url + '/api/app/side_menu/3').toPromise();
+  //   const sideMenu = response; 
+  //   return sideMenu;
+  // }
 
-  async getMainMenu(){
-    const response = await this.http.get(this.url + '/api/app/main_menu/6').toPromise();
-    const mainMenu = response; 
-    return mainMenu;
-  }
+  // async getMainMenu(){
+  //   const response = await this.http.get(this.url + '/api/app/main_menu/6').toPromise();
+  //   const mainMenu = response; 
+  //   return mainMenu;
+  // }
 
   async getAppSettings(){
     const response = await this.http.get(this.url + '/api/app/app_settings/1').toPromise();

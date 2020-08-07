@@ -10,26 +10,34 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent {
-  categoryShow : boolean;
+  sideMenuShow : boolean;
+  sideMenu:object;
   url : string;
-  @Input() sideMenus: object;
 
   constructor(private http: HttpClient,public appService : AppService,public route: ActivatedRoute) { 
     
   }
 
-  categoryClose(categoryStatus){
-    if(categoryStatus)
-    this.categoryShow= false;
+  async sideMenuGet(){
+    let appSettings = await this.appService.getAppSettings();
+    this.sideMenu = appSettings["side_menu"];
+
+  }
+
+  sideMenuClose(sideMenuStatus){
+    if(sideMenuStatus)
+    this.sideMenuShow= false;
     else
-    this.categoryShow = true;
+    this.sideMenuShow = true;
   }
 
   ngOnInit(): void {
+    this.sideMenuGet();
+
     this.url = this.route.routeConfig.path;
 
     if(!this.url)
-    this.categoryShow = true;
+    this.sideMenuShow = true;
 
   }
 
