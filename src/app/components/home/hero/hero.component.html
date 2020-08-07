@@ -25,8 +25,8 @@
                         <ul style="padding-left: 3%;
                         padding-top: 1.5%;">
                             <li>
-                                <a><i class="fa fa-heart" data-toggle="modal" data-target="#exampleModal"></i>
-                                    <span>1</span></a>
+                                <a><i class="fa fa-heart" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal"></i>
+                                    <span>{{appService.likeCount}}</span></a>
                             </li>
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -51,7 +51,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>{{appService.basketCount}}</span></a></li>
                         </ul>
                         <div class="header__top__right__auth" style="padding-left: 3%;">
                             <a href="#"><i class="fa fa-user"></i> Giriş Yap</a>

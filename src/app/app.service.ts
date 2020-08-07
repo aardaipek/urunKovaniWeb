@@ -8,6 +8,9 @@ import { HttpClient} from '@angular/common/http';
 
 export class AppService {
  public url : string;
+ basketCount : number;
+ likeCount : number;
+
 
   constructor(
     public ngZone: NgZone,
@@ -15,6 +18,9 @@ export class AppService {
     public route : Router
   ) {  
     this.url = 'https://localhost:44388';
+    this.basketCount = 0;
+    this.likeCount = 0;
+
   }
 
 
@@ -35,6 +41,14 @@ export class AppService {
     const appSettings = JSON.parse(response[0]["content"]);
    
     return appSettings;
+  }
+
+   addBasket(){
+    this.basketCount++;
+  }
+
+  addLike(){
+    this.likeCount++;
   }
   
 }

@@ -13,6 +13,8 @@ export class HeroComponent {
   sideMenuShow : boolean;
   sideMenu:object;
   url : string;
+  likeCount : number;
+  
 
   constructor(private http: HttpClient,public appService : AppService,public route: ActivatedRoute) { 
     
@@ -32,6 +34,7 @@ export class HeroComponent {
   }
 
   ngOnInit(): void {
+    this.likeCount = 0;
     this.sideMenuGet();
 
     this.url = this.route.routeConfig.path;
