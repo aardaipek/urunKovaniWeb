@@ -27,10 +27,18 @@
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
+<<<<<<< HEAD
+=======
+                                   
+>>>>>>> 1048c2a3a64d2a44953fc7f8b50ad4f4eaaa1fb2
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
+<<<<<<< HEAD
+=======
+              
+>>>>>>> 1048c2a3a64d2a44953fc7f8b50ad4f4eaaa1fb2
             ]
           },
           "configurations": {

@@ -8,6 +8,12 @@ import { HttpClient} from '@angular/common/http';
 
 export class AppService {
  public url : string;
+<<<<<<< HEAD
+=======
+ basketCount : number;
+ likeCount : number;
+
+>>>>>>> 1048c2a3a64d2a44953fc7f8b50ad4f4eaaa1fb2
 
   constructor(
     public ngZone: NgZone,
@@ -15,6 +21,7 @@ export class AppService {
     public route : Router
   ) {  
     this.url = 'https://localhost:44388';
+<<<<<<< HEAD
   }
 
 
@@ -35,5 +42,39 @@ export class AppService {
   //   const mainMenu = response; 
   //   return mainMenu;
   // }
+=======
+    this.basketCount = 0;
+    this.likeCount = 0;
+
+  }
+
+
+  // async getSideMenu(){
+  //   const response = await this.http.get(this.url + '/api/app/side_menu/3').toPromise();
+  //   const sideMenu = response; 
+  //   return sideMenu;
+  // }
+
+  // async getMainMenu(){
+  //   const response = await this.http.get(this.url + '/api/app/main_menu/6').toPromise();
+  //   const mainMenu = response; 
+  //   return mainMenu;
+  // }
+
+  async getAppSettings(){
+    const response = await this.http.get(this.url + '/api/app/app_settings/1').toPromise();
+    const appSettings = JSON.parse(response[0]["content"]);
+   
+    return appSettings;
+  }
+
+   addBasket(){
+    this.basketCount++;
+  }
+
+  addLike(){
+    this.likeCount++;
+  }
+>>>>>>> 1048c2a3a64d2a44953fc7f8b50ad4f4eaaa1fb2
   
 }

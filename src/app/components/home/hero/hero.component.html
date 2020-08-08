@@ -3,12 +3,21 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="hero__categories">
+<<<<<<< HEAD
                     <div class="hero__categories__all" (click)="categoryClose(categoryShow);">
                         <i class="fa fa-bars"></i>
                         <span>Kategoriler</span>
                     </div>
                     <ul *ngIf="categoryShow">
                         <li *ngFor="let menu of sideMenu"><a href="#">{{menu.category_name}}</a></li>
+=======
+                    <div class="hero__categories__all" (click)="sideMenuClose(sideMenuShow);">
+                        <i class="fa fa-bars"></i>
+                        <span>Kategoriler</span>
+                    </div>
+                    <ul *ngIf="sideMenuShow">
+                        <li *ngFor="let menu of sideMenu"><a href="#">{{menu.name}}</a></li>                       
+>>>>>>> 1048c2a3a64d2a44953fc7f8b50ad4f4eaaa1fb2
                     </ul>
                 </div>
             </div>
@@ -16,7 +25,11 @@
                 <div class="hero__search">
                     <div class="hero__search__form">
                         <form action="#">
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> 1048c2a3a64d2a44953fc7f8b50ad4f4eaaa1fb2
                             <input type="text" placeholder="Ürün,kategori veya marka ara">
                             <button type="submit" class="site-btn">Arama</button>
                         </form>
@@ -25,8 +38,13 @@
                         <ul style="padding-left: 3%;
                         padding-top: 1.5%;">
                             <li>
+<<<<<<< HEAD
                                 <a><i class="fa fa-heart" data-toggle="modal" data-target="#exampleModal"></i>
                                     <span>1</span></a>
+=======
+                                <a><i class="fa fa-heart" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal"></i>
+                                    <span>{{appService.likeCount}}</span></a>
+>>>>>>> 1048c2a3a64d2a44953fc7f8b50ad4f4eaaa1fb2
                             </li>
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -40,7 +58,11 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
+<<<<<<< HEAD
                                             <ul *ngIf="categoryShow">
+=======
+                                            <ul *ngIf="sideMenuShow">
+>>>>>>> 1048c2a3a64d2a44953fc7f8b50ad4f4eaaa1fb2
                                                 <li *ngFor="let menu of sideMenu" style="display:flex;flex-direction:column" ><a href="#">{{menu.category_name}}</a></li>
                                             </ul>
                                         </div>
@@ -51,7 +73,11 @@
                                     </div>
                                 </div>
                             </div>
+<<<<<<< HEAD
                             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+=======
+                            <li><a href="shop-cart"><i class="fa fa-shopping-bag"></i> <span>{{appService.basketCount}}</span></a></li>
+>>>>>>> 1048c2a3a64d2a44953fc7f8b50ad4f4eaaa1fb2
                         </ul>
                         <div class="header__top__right__auth" style="padding-left: 3%;">
                             <a href="#"><i class="fa fa-user"></i> Giriş Yap</a>
@@ -64,8 +90,41 @@
         </div>
 
     </div>
+<<<<<<< HEAD
     <div *ngIf="url"
         style="background-image:url('../assets/common/img/breadcrumb.jpg');height: 140px;color: white;text-align: center;align-items: center;display: flex;justify-content: center;font-family: sans-serif;    font-size: 30px;">
         {{url}}</div>
 
 </section>
+=======
+ 
+
+
+        <!-- <div class="container" style="width: 100%;">
+            <div class="row">
+              <div class="col-sm" style="background-color: red;">
+                One of three columns
+              </div>
+              <div class="col-sm" style="background-color: orange;">
+                One of three columns
+              </div>
+              <div class="col-sm" style="background-color: black;">
+                One of three columns
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              1 of 3
+            </div>
+            <div class="col">
+              2 of 3
+            </div>
+            <div class="col">
+              3 of 3
+            </div>
+          </div> -->
+
+</section>
+>>>>>>> 1048c2a3a64d2a44953fc7f8b50ad4f4eaaa1fb2
