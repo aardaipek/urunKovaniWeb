@@ -17,6 +17,7 @@ import { ShopCartComponent } from './pages/shop/shoping-cart/shoping-cart.compon
 
 
 import { HttpClientModule } from '@angular/common/http';
+import { SliderComponent } from './components/home/slider/slider.component';
 
 
 
@@ -33,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     BreadcrumbHeroComponent,
     ShopDetailComponent,
-    ShopCartComponent
+    ShopCartComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
