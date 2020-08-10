@@ -51,14 +51,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <li><a href="shop-cart"><i class="fa fa-shopping-bag"></i> <span>{{appService.basketCount}}</span></a></li>
+                            <li><a href="shoping-cart"><i class="fa fa-shopping-bag"></i> <span>{{appService.basketCount}}</span></a></li>
                         </ul>
                         <div class="header__top__right__auth" style="padding-left: 3%;">
                             <a href="#"><i class="fa fa-user"></i> Giriş Yap</a>
                         </div>
                     </div>
                 </div>
-                <app-slider></app-slider>
+                <app-slider *ngIf="homePage"></app-slider>
                 <!-- <img src="../assets/header.png" alt="" *ngIf="!url"> -->
 
             </div>

@@ -14,6 +14,7 @@ export class HeroComponent {
   sideMenu:object;
   url : string;
   likeCount : number;
+  homePage : boolean;
   
 
   constructor(private http: HttpClient,public appService : AppService,public route: ActivatedRoute) { 
@@ -39,8 +40,16 @@ export class HeroComponent {
 
     this.url = this.route.routeConfig.path;
 
-    if(!this.url)
-    this.sideMenuShow = true;
+    if(!this.url){
+      this.sideMenuShow = true;
+      this.homePage = true;
+
+    }
+    else{
+      this.homePage = false;
+
+    }
+    
 
   }
 

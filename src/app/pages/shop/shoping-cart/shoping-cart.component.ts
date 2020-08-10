@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-shop-cart',
+  selector: 'app-shoping-cart',
   templateUrl: './shoping-cart.component.html',
   styleUrls: ['./shoping-cart.component.css']
 })
-export class ShopCartComponent implements OnInit {
+export class ShopingCartComponent implements OnInit {
 
   constructor() { }
 
