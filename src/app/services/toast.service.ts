@@ -22,7 +22,7 @@ export class ToastService {
   }
 
   errorProcess(title?:string) {
-    this.toastr.error(title != null ? title + " işlemi başarılı" : 'İşlem Başarılı');
+    this.toastr.error(title != null ? title + " işlemi başarısız" : 'İşlem Başarısız');
   }
 
 }
