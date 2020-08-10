@@ -58,6 +58,7 @@
                         </div>
                     </div>
                 </div>
+               
                 <app-slider *ngIf="homePage"></app-slider>
                 <!-- <img src="../assets/header.png" alt="" *ngIf="!url"> -->
 
@@ -65,33 +66,13 @@
         </div>
 
     </div>
- 
 
 
-        <!-- <div class="container" style="width: 100%;">
-            <div class="row">
-              <div class="col-sm" style="background-color: red;">
-                One of three columns
-              </div>
-              <div class="col-sm" style="background-color: orange;">
-                One of three columns
-              </div>
-              <div class="col-sm" style="background-color: black;">
-                One of three columns
-              </div>
-            </div>
+          <div class="row" *ngIf="!homePage" style=" width: 101%;">
+            <div class="col" style="background-color: #f59f28;height: 12px;"></div>
+            <div class="col" style="background-color: #6a4162;height: 12px;"></div>
+            <div class="col" style="background-color: #7fad39;height: 12px;"></div>
+            <div class="col" style="background-color: #8cdbf2;height: 12px;"></div>
           </div>
-
-          <div class="row">
-            <div class="col">
-              1 of 3
-            </div>
-            <div class="col">
-              2 of 3
-            </div>
-            <div class="col">
-              3 of 3
-            </div>
-          </div> -->
 
 </section>
