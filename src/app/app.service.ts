@@ -1,6 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Router } from "@angular/router";
 import { HttpClient} from '@angular/common/http';
+import { ToastService } from './services/toast.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class AppService {
   constructor(
     public ngZone: NgZone,
     public http : HttpClient,
-    public route : Router
+    public route : Router,
+    private toast: ToastService
   ) {  
     this.url = 'https://localhost:44388';
     this.basketCount = 0;
@@ -45,6 +47,7 @@ export class AppService {
 
    addBasket(){
     this.basketCount++;
+    this.toast.succesProcess()
   }
 
   addLike(){

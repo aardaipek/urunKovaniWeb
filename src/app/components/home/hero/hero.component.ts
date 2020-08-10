@@ -50,8 +50,16 @@ export class HeroComponent {
 
     }
     // this.router.config //  tanımlı bütün routeları döner
+  }
 
 
+
+  toggleWithGreeting(popover, greeting: string, language: string) {
+    if (popover.isOpen()) {
+      popover.close();
+    } else {
+      popover.open({greeting, language});
+    }
   }
 
 

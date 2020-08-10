@@ -1,6 +1,7 @@
 /* 
 @import      "../src/common/bootstrap.min.css"; */
 @import      "../src/assets/common/style.css";
+@import '~ngx-toastr/toastr';
 
 :root {
     --white100: #FFFFFF;
