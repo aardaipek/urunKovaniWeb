@@ -1,7 +1,7 @@
-import { Component, OnInit,Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {AppService} from "../../../app.service"
-import {ActivatedRoute} from '@angular/router';
+import { AppService } from "../../../app.service"
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -10,28 +10,28 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent {
-  sideMenuShow : boolean;
-  sideMenu:object;
-  url : string;
-  likeCount : number;
-  homePage : boolean;
-  
+  sideMenuShow: boolean;
+  sideMenu: object;
+  url: string;
+  likeCount: number;
+  homePage: boolean;
 
-  constructor(private http: HttpClient,public appService : AppService,public route: ActivatedRoute) { 
-    
+
+  constructor(private http: HttpClient, public appService: AppService, public route: ActivatedRoute, private router: Router) {
+
   }
 
-  async sideMenuGet(){
+  async sideMenuGet() {
     let appSettings = await this.appService.getAppSettings();
     this.sideMenu = appSettings["side_menu"];
 
   }
 
-  sideMenuClose(sideMenuStatus){
-    if(sideMenuStatus)
-    this.sideMenuShow= false;
+  sideMenuClose(sideMenuStatus) {
+    if (sideMenuStatus)
+      this.sideMenuShow = false;
     else
-    this.sideMenuShow = true;
+      this.sideMenuShow = true;
   }
 
   ngOnInit(): void {
@@ -40,19 +40,20 @@ export class HeroComponent {
 
     this.url = this.route.routeConfig.path;
 
-    if(!this.url){
+    if (!this.url) {
       this.sideMenuShow = true;
       this.homePage = true;
 
     }
-    else{
+    else {
       this.homePage = false;
 
     }
-    
+    // this.router.config //  tanımlı bütün routeları döner
+
 
   }
 
- 
- 
+
+
 }

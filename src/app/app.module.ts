@@ -18,6 +18,7 @@ import { ShopingCartComponent } from './pages/shop/shoping-cart/shoping-cart.com
 
 import { HttpClientModule } from '@angular/common/http';
 import { SliderComponent } from './components/home/slider/slider.component';
+import { LikesComponent } from './components/likes/likes.component';
 
 
 
@@ -35,7 +36,8 @@ import { SliderComponent } from './components/home/slider/slider.component';
     BreadcrumbHeroComponent,
     ShopDetailComponent,
     ShopingCartComponent,
-    SliderComponent
+    SliderComponent,
+    LikesComponent
   ],
   imports: [
     BrowserModule,

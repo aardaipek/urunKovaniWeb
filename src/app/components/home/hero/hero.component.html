@@ -8,7 +8,7 @@
                         <span>Kategoriler</span>
                     </div>
                     <ul *ngIf="sideMenuShow">
-                        <li *ngFor="let menu of sideMenu"><a href="#">{{menu.name}}</a></li>                       
+                        <li *ngFor="let menu of sideMenu"><a href="#">{{menu.name}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="hero__search">
                     <div class="hero__search__form">
                         <form action="#">
-                        
+
                             <input type="text" placeholder="Ürün,kategori veya marka ara">
                             <button type="submit" class="site-btn">Arama</button>
                         </form>
@@ -25,7 +25,8 @@
                         <ul style="padding-left: 3%;
                         padding-top: 1.5%;">
                             <li>
-                                <a><i class="fa fa-heart" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal"></i>
+                                <a><i class="fa fa-heart" style="cursor: pointer;" data-toggle="modal"
+                                        data-target="#exampleModal"></i>
                                     <span>{{appService.likeCount}}</span></a>
                             </li>
                             <!-- Modal -->
@@ -41,24 +42,29 @@
                                         </div>
                                         <div class="modal-body">
                                             <ul *ngIf="sideMenuShow">
-                                                <li *ngFor="let menu of sideMenu" style="display:flex;flex-direction:column" ><a href="#">{{menu.category_name}}</a></li>
+                                                <li *ngFor="let menu of sideMenu"
+                                                    style="display:flex;flex-direction:column"><a
+                                                        href="#">{{menu.category_name}}</a></li>
                                             </ul>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal"
                                                 onclick="closeModal()">Kapat</button>
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                                [routerLink]="'/likes/1'">Sayfayı Aç</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <li><a href="shoping-cart"><i class="fa fa-shopping-bag"></i> <span>{{appService.basketCount}}</span></a></li>
+                            <li><a href="shoping-cart"><i class="fa fa-shopping-bag"></i>
+                                    <span>{{appService.basketCount}}</span></a></li>
                         </ul>
                         <div class="header__top__right__auth" style="padding-left: 3%;">
                             <a href="#"><i class="fa fa-user"></i> Giriş Yap</a>
                         </div>
                     </div>
                 </div>
-               
+
                 <app-slider *ngIf="homePage"></app-slider>
                 <!-- <img src="../assets/header.png" alt="" *ngIf="!url"> -->
 
@@ -68,18 +74,26 @@
     </div>
 
 
-          <!-- <div class="row" *ngIf="!homePage" style=" width: 101%;">
+    <!-- <div class="row" *ngIf="!homePage" style=" width: 101%;">
             <div class="col" style="background-color: #f59f28;height: 12px;"></div>
             <div class="col" style="background-color: #6a4162;height: 12px;"></div>
             <div class="col" style="background-color: #7fad39;height: 12px;"></div>
             <div class="col" style="background-color: #8cdbf2;height: 12px;"></div>
           </div> -->
 
-          <div class="row" *ngIf="!homePage" style=" width: 101%;">
+
+          <!-- <div class="row" *ngIf="!homePage" style=" width: 101%;">
             <div class="col" style="background-color: #6cc2bd;height: 12px;"></div>
             <div class="col" style="background-color: #5a819e;height: 12px;"></div>
             <div class="col" style="background-color: #f67e7d;height: 12px;"></div>
             <div class="col" style="background-color: #7d7aa2;height: 12px;"></div>
-          </div>
+          </div> -->
+
+    <div class="row" *ngIf="!homePage" style=" width: 101%;">
+        <div class="col" style="background-color: #6cc2bd;height: 12px;"></div>
+        <div class="col" style="background-color: #5a819e;height: 12px;"></div>
+        <div class="col" style="background-color: #7d7aa2;height: 12px;"></div>
+        <div class="col" style="background-color: #f67e7d;height: 12px;"></div>
+    </div>
 
 </section>
