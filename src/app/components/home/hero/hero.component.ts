@@ -15,7 +15,7 @@ export class HeroComponent {
   url: string;
   likeCount: number;
   homePage: boolean;
-
+  
 
   constructor(private http: HttpClient, public appService: AppService, public route: ActivatedRoute, private router: Router) {
 
@@ -49,6 +49,7 @@ export class HeroComponent {
       this.homePage = false;
 
     }
+   
     // this.router.config //  tanımlı bütün routeları döner
   }
 

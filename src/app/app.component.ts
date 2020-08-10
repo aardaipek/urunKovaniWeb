@@ -10,7 +10,7 @@ export class AppComponent {
   mainMenu :object; 
   message : string;
   sideMenu : object;
-  
+  culture: string = "";
   constructor(public appService : AppService) { 
     
   }
@@ -26,6 +26,7 @@ export class AppComponent {
   ngOnInit(): void {
     this.getAppSettings();
     this.message="atakan";
+    
 
   }
 
