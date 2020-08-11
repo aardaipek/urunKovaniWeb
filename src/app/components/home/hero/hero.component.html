@@ -50,12 +50,30 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-dismiss="modal"
                                                 onclick="closeModal()">Kapat</button>
-                                                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal"
                                                 [routerLink]="'/likes/1'">Sayfayı Aç</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+
+
+                            <!-- <ng-template #popTitle let-language="language">Greeting in {{language}}</ng-template>
+                            <ng-template #popContent let-greeting="greeting">{{greeting}}, <b>Likes</b>!</ng-template>
+                            <li>
+                                <button type="button" class="btn btn-outline-secondary"
+                                [ngbPopover]="popContent" 
+                                [popoverTitle]="popTitle"
+                                triggers="manual"
+                                    #p1="ngbPopover"
+                                    (click)="toggleWithGreeting(p1, 'Bonjour', 'French')"
+                                    container="body">
+                                    Popover appended to body
+                                </button>
+                            </li> -->
+
+
                             <li><a href="shoping-cart"><i class="fa fa-shopping-bag"></i>
                                     <span>{{appService.basketCount}}</span></a></li>
                         </ul>
@@ -82,12 +100,12 @@
           </div> -->
 
 
-          <div class="row" *ngIf="!homePage" style=" width: 101%;">
-            <div class="col" style="background-color: #6cc2bd;height: 12px;"></div>
-            <div class="col" style="background-color: #5a819e;height: 12px;"></div>
-            <div class="col" style="background-color: #f67e7d;height: 12px;"></div>
-            <div class="col" style="background-color: #7d7aa2;height: 12px;"></div>
-          </div>
+    <div class="row" *ngIf="!homePage" style=" width: 101%;">
+        <div class="col" style="background-color: #6cc2bd;height: 12px;"></div>
+        <div class="col" style="background-color: #5a819e;height: 12px;"></div>
+        <div class="col" style="background-color: #f67e7d;height: 12px;"></div>
+        <div class="col" style="background-color: #7d7aa2;height: 12px;"></div>
+    </div>
 
     <!-- <div class="row" *ngIf="!homePage" style=" width: 101%;">
         <div class="col" style="background-color: #6cc2bd;height: 12px;"></div>
