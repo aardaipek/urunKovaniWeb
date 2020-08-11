@@ -18,11 +18,11 @@ export class ToastService {
   
 
   succesProcess(title?:string) {
-    this.toastr.success(title != null ? title + " işlemi başarılı" : 'İşlem Başarılı');
+    this.toastr.success(title);
   }
 
   errorProcess(title?:string) {
-    this.toastr.error(title != null ? title + " işlemi başarısız" : 'İşlem Başarısız');
+    this.toastr.error(title);
   }
 
 }

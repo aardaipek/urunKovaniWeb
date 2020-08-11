@@ -56,12 +56,12 @@ export class AppService {
 
   addBasket() {
     this.basketCount++;
-    this.toast.succesProcess("Sepete ekleme ")
+    this.toast.succesProcess("Ürün sepetinize eklendi.")
   }
 
   addLike() {
     this.likeCount++;
-    this.toast.succesProcess()
+    this.toast.succesProcess("Ürün beğeni listenize eklendi.")
   }
 
 }
