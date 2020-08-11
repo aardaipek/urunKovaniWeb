@@ -49,7 +49,11 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    ToastrModule.forRoot(), 
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
