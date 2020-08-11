@@ -1,1 +1,74 @@
-<p>register works!</p>
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                            <div class="col col-md-12" style="text-align:center;">
+                               <a href="#"><img  src="../assets/logo.png" ></a> 
+                            </div>
+                        <hr class="my-4">
+                        <form class="form-signin">
+                            <div class="row justify-content-md-center" >
+                                <div class="col justify-content-md-center text-center col-md-12 mb-5">
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btnMemberTypeCustom btn-outline-dark mr-4">
+                                            <input type="radio" name="options" id="option2" autocomplete="off"> Mağaza
+                                          </label>
+                                        <label class="btn btnMemberTypeCustom btn-outline-success">
+                                          <input type="radio" name="options" id="option2" autocomplete="off"> Esnaf
+                                        </label>
+                                      </div>
+                                </div>
+                                <div class="col col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="text" id="inputName" class="form-control" placeholder="Ad"
+                                            required autofocus>
+                                        <label for="inputName">Ad</label>
+                                    </div>
+                                  </div>
+                                  <div class="col col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="text" id="inputLastname" class="form-control" placeholder="Soyad"
+                                            required>
+                                        <label for="inputLastname">Soyad</label>
+                                    </div>
+                                  </div>
+                                  <div class="col col-md-12">
+                                    <div class="form-label-group">
+                                        <input type="email" id="inputEmail" class="form-control" placeholder="Eposta"
+                                            required >
+                                        <label for="inputEmail">Eposta</label>
+                                    </div>
+                                  </div>
+                                  <div class="col col-md-12">
+                                    <div class="form-label-group">
+                                        <input type="password" id="inputPassword" class="form-control" placeholder="Şifre"
+                                            required>
+                                        <label for="inputPassword">Şifre</label>
+                                    </div> 
+                                  </div>
+                                  <div class="col col-md-12">
+                                    <div class="custom-control custom-checkbox mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Herşeyi okudum kabul ettim</label>
+                                    </div>
+                                  </div>
+                                <div class="col col-md-12">
+                                    <div class="form-label-group mt-3 text-center">
+                                        <button class="btn btnCustom btn-lg btn-outline-success btn-block" type="submit">Üye ol</button>
+                                    </div>
+                                </div>
+                                <div class="col col-md-12">
+                                    <div class="form-label-group mt-1 text-center">
+                                        <button class="btn btnCustom btn-lg btn-outline-secondary btn-block " [routerLink]="'/login'" type="submit">Giriş</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
