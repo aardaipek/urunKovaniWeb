@@ -35,10 +35,8 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Beğendiğin Ürünler</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                                            <h5 class="modal-title text-center"  id="exampleModalLabel">Beğendiğin Ürünler</h5>
+                                            
                                         </div>
                                         <div class="modal-body">
                                             <ul *ngIf="sideMenuShow">
@@ -47,31 +45,10 @@
                                                         href="#">{{menu.category_name}}</a></li>
                                             </ul>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal"
-                                                onclick="closeModal()">Kapat</button>
-                                            <button type="button" class="btn btn-primary" data-dismiss="modal"
-                                                [routerLink]="'/likes/1'">Sayfayı Aç</button>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-
-
-                            <!-- <ng-template #popTitle let-language="language">Greeting in {{language}}</ng-template>
-                            <ng-template #popContent let-greeting="greeting">{{greeting}}, <b>Likes</b>!</ng-template>
-                            <li>
-                                <button type="button" class="btn btn-outline-secondary"
-                                [ngbPopover]="popContent" 
-                                [popoverTitle]="popTitle"
-                                triggers="manual"
-                                    #p1="ngbPopover"
-                                    (click)="toggleWithGreeting(p1, 'Bonjour', 'French')"
-                                    container="body">
-                                    Popover appended to body
-                                </button>
-                            </li> -->
 
 
                             <li><a href="shoping-cart"><i class="fa fa-shopping-bag"></i>
