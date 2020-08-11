@@ -32,12 +32,23 @@
     padding:1rem
   }
   
-  .form-signin .btn {
+  .form-signin .btnCustom {
     font-size: 80%;
     border-radius: 0.5rem;
     letter-spacing: .1rem;
     font-weight: bold;
     padding: 1rem;
+    transition: all 0.2s;
+  }
+
+  .form-signin .btnMemberTypeCustom {
+    font-size: 80%;
+    border-radius: 0.5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    padding-left:1rem;
+    padding-right: 1rem;
     transition: all 0.2s;
   }
   
