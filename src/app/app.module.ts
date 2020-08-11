@@ -24,6 +24,9 @@ import { RegisterComponent } from './pages/auth/register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ToastrModule } from 'ngx-toastr';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { CheckoutFormComponent } from './components/checkout/checkout-form/checkout-form.component';
+import { CheckoutSummaryComponent } from './components/checkout/checkout-summary/checkout-summary.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { ToastrModule } from 'ngx-toastr';
     SliderComponent,
     LikesComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CheckoutComponent,
+    CheckoutFormComponent,
+    CheckoutSummaryComponent
   ],
   imports: [
     BrowserModule,

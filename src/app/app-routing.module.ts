@@ -7,6 +7,8 @@ import { ShopDetailComponent } from './pages/shop/shop-detail/shop-detail.compon
 import { ShopingCartComponent } from './pages/shop/shoping-cart/shoping-cart.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+
 
 
 
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path: "shop", component: ShopComponent},
   { path: "shoping-cart", component: ShopingCartComponent},
   { path: "detail/:id", component: ShopDetailComponent },
-  { path: "likes/:id",component: LikesComponent} // id => userId olablir
+  { path: "likes/:id",component: LikesComponent},
+  { path: "checkout", component: CheckoutComponent}
+
 
 ];
 
