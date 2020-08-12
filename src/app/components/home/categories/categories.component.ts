@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from "../../../app.service"
 
 @Component({
   selector: 'app-categories',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
+  topStoresShops : object;
+  constructor(public appService: AppService) { }
 
-  constructor() { }
+  async getTopStoresShops() {
+    let getTopStoresShops = await this.appService.getTopStoresShops();
+    this.topStoresShops = getTopStoresShops;
 
+  }
   ngOnInit(): void {
+    this.getTopStoresShops();
   }
 
 }

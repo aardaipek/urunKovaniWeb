@@ -32,18 +32,11 @@ export class AppService {
     return language
   }
 
-
-  // async getSideMenu(){
-  //   const response = await this.http.get(this.url + '/api/app/side_menu/3').toPromise();
-  //   const sideMenu = response; 
-  //   return sideMenu;
-  // }
-
-  // async getMainMenu(){
-  //   const response = await this.http.get(this.url + '/api/app/main_menu/6').toPromise();
-  //   const mainMenu = response; 
-  //   return mainMenu;
-  // }
+  async getTopStoresShops() {
+    const response = await this.http.get(this.url + '/api/app/top_stores_shops').toPromise();
+   
+    return response;
+  }
 
   async getAppSettings() {
     const response = await this.http.get(this.url + '/api/app/app_settings/1').toPromise();
