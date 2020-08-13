@@ -5,140 +5,37 @@
                 <div class="section-title">
                     <h2>Mağazalar</h2>
                 </div>
+
                 <div class="featured__controls">
                     <ul>
-                        <li class="active" data-filter="*">Kadın</li>
-                        <li data-filter=".oranges">Erkek</li>
-                        <li data-filter=".oranges">Çocuk</li>
-                        <li data-filter=".oranges">Elektronik</li>
-                        <li data-filter=".fresh-meat">Teknoloji</li>
-                        <li data-filter=".vegetables">Süper Market</li>
-                        <li data-filter=".fastfood">Kozmetik</li>
+                        <li [ngClass]="{'active':activeMenuItem == menu.name}" data-filter=".oranges" (click)="activeMenuItemClick(menu.name)" *ngFor="let menu of shopMenu">{{menu.name}}</li>
                     </ul>
                 </div>
             </div>
         </div>
+     
         <div class="row featured__filter">
+           
             <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                 <div class="featured__item" style="cursor: pointer;">
-                    <a href="detail/1">
-                        <div class="featured__item__pic set-bg" [ngStyle]="{backgroundImage:'url(../assets/common/img/featured/feature-7.jpg)'}">
+                    <a href="detail/1">             
+                        <div class="featured__item__pic set-bg" *ngFor="let shop of allShops"
+                        style="background: url({{shop.image}})">
                             <ul class="featured__item__pic__hover">
-                            <li (click)="appService.addLike();"><a href="#0"><i class="fa fa-heart"  style="cursor:pointer"></i></a></li>
-                            <li (click)="appService.addBasket();"><a href="#0"><i class="fa fa-shopping-cart"  style="cursor:pointer"></i></a></li>
-                        </ul>
-                    </div>
-                </a>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                    </div>
+                                <li (click)="appService.addLike();"><a href="#0"><i class="fa fa-heart"
+                                            style="cursor:pointer"></i></a></li>
+                                <li (click)="appService.addBasket();"><a href="#0"><i class="fa fa-shopping-cart"
+                                            style="cursor:pointer"></i></a></li>
+                            </ul>
+                        </div>
+                    </a>
+                    <!-- <div class="featured__item__text">
+                        <h6><a href="#">a</a></h6>
+                    </div> -->
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
-                <div class="featured__item" style="cursor: pointer;">
-                    <a href="detail/1">
-                        <div class="featured__item__pic set-bg" [ngStyle]="{backgroundImage:'url(../assets/common/img/featured/feature-7.jpg)'}">
-                            <ul class="featured__item__pic__hover">
-                            <li (click)="appService.addLike();"><a href="#0"><i class="fa fa-heart"  style="cursor:pointer"></i></a></li>
-                            <li (click)="appService.addBasket();"><a href="#0"><i class="fa fa-shopping-cart"  style="cursor:pointer"></i></a></li>
-                        </ul>
-                    </div>
-                </a>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
-                <div class="featured__item" style="cursor: pointer;">
-                    <a href="detail/1">
-                        <div class="featured__item__pic set-bg" [ngStyle]="{backgroundImage:'url(../assets/common/img/featured/feature-7.jpg)'}">
-                            <ul class="featured__item__pic__hover">
-                            <li (click)="appService.addLike();"><a href="#0"><i class="fa fa-heart"  style="cursor:pointer"></i></a></li>
-                            <li (click)="appService.addBasket();"><a href="#0"><i class="fa fa-shopping-cart"  style="cursor:pointer"></i></a></li>
-                        </ul>
-                    </div>
-                </a>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
-                <div class="featured__item" style="cursor: pointer;">
-                    <a href="detail/1">
-                        <div class="featured__item__pic set-bg" [ngStyle]="{backgroundImage:'url(../assets/common/img/featured/feature-7.jpg)'}">
-                            <ul class="featured__item__pic__hover">
-                            <li (click)="appService.addLike();"><a href="#0"><i class="fa fa-heart"  style="cursor:pointer"></i></a></li>
-                            <li (click)="appService.addBasket();"><a href="#0"><i class="fa fa-shopping-cart"  style="cursor:pointer"></i></a></li>
-                        </ul>
-                    </div>
-                </a>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
-                <div class="featured__item" style="cursor: pointer;">
-                    <a href="detail/1">
-                        <div class="featured__item__pic set-bg" [ngStyle]="{backgroundImage:'url(../assets/common/img/featured/feature-7.jpg)'}">
-                            <ul class="featured__item__pic__hover">
-                            <li (click)="appService.addLike();"><a href="#0"><i class="fa fa-heart"  style="cursor:pointer"></i></a></li>
-                            <li (click)="appService.addBasket();"><a href="#0"><i class="fa fa-shopping-cart"  style="cursor:pointer"></i></a></li>
-                        </ul>
-                    </div>
-                </a>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
-                <div class="featured__item" style="cursor: pointer;">
-                    <a href="detail/1">
-                        <div class="featured__item__pic set-bg" [ngStyle]="{backgroundImage:'url(../assets/common/img/featured/feature-7.jpg)'}">
-                            <ul class="featured__item__pic__hover">
-                            <li (click)="appService.addLike();"><a href="#"><i class="fa fa-heart"  style="cursor:pointer"></i></a></li>
-                            <li (click)="appService.addBasket();"><a href="#"><i class="fa fa-shopping-cart"  style="cursor:pointer"></i></a></li>
-                        </ul>
-                    </div>
-                </a>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
-              <div class="featured__item" style="cursor: pointer;">
-                    <a href="detail/1">
-                        <div class="featured__item__pic set-bg" [ngStyle]="{backgroundImage:'url(../assets/common/img/featured/feature-7.jpg)'}">
-                            <ul class="featured__item__pic__hover">
-                            <li (click)="appService.addLike();"><a href="#"><i class="fa fa-heart"  style="cursor:pointer"></i></a></li>
-                            <li (click)="appService.addBasket();"><a href="#"><i class="fa fa-shopping-cart"  style="cursor:pointer"></i></a></li>
-                        </ul>
-                    </div>
-                </a>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
-                <div class="featured__item" style="cursor: pointer;">
-                    <a href="detail/1">
-                        <div class="featured__item__pic set-bg" [ngStyle]="{backgroundImage:'url(../assets/common/img/featured/feature-7.jpg)'}">
-                            <ul class="featured__item__pic__hover">
-                            <li (click)="appService.addLike();"><a href="#"><i class="fa fa-heart"  style="cursor:pointer"></i></a></li>
-                            <li (click)="appService.addBasket();"><a href="#"><i class="fa fa-shopping-cart"  style="cursor:pointer"></i></a></li>
-                        </ul>
-                    </div>
-                </a>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                    </div>
-                </div>
-            </div>
+            
+           
             <div style="width: 100%;">
 
                 <div class="product__pagination" style="margin-right: 2%;float: right;">
@@ -149,9 +46,9 @@
                 </div>
             </div>
 
-           
+
         </div>
-    
+
     </div>
-   
+
 </section>
