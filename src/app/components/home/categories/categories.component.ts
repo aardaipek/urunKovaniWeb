@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from "../../../app.service"
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-categories',
@@ -8,7 +10,7 @@ import { AppService } from "../../../app.service"
 })
 export class CategoriesComponent implements OnInit {
   topStoresShops : object;
-  constructor(public appService: AppService) { }
+  constructor(public appService: AppService,private router :Router) { }
 
   async getTopStoresShops() {
     let getTopStoresShops = await this.appService.getTopStoresShops();
@@ -17,6 +19,11 @@ export class CategoriesComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getTopStoresShops();
+  }
+
+  gotoShop(id){
+      const ID = id ? id : null;
+      this.router.navigate(['/shop', { id: ID }]);
   }
 
 }

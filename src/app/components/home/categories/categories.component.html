@@ -9,7 +9,7 @@
                     </div>
                     <div class="row">
                         <div class="card-group">
-                            <div class="card" style="max-width: 30%;    margin-right: 2%;"
+                            <div class="card" (click)="gotoShop(topStoresShop.id)" style="max-width: 30%;    margin-right: 2%;"
                                 *ngFor="let topStoresShop of topStoresShops">
                                 <img class="card-img-top" src="{{topStoresShop.image}}" alt="Card image cap">
                                 <div class="card-body">
@@ -22,13 +22,8 @@
                                     <small class="text-muted">Last updated 3 mins ago</small>
                                 </div>
                             </div>
-
-
-
                         </div>
-
                     </div>
-
                 </div>
             </div>
             <!-- Banner End -->
