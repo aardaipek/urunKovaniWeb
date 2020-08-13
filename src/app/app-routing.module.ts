@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: "", pathMatch: "full", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent},
-  { path: "shop", component: ShopComponent},
+  { path: "shop/:id", component: ShopComponent},
   { path: "shoping-cart", component: ShopingCartComponent},
   { path: "detail/:id", component: ShopDetailComponent },
   { path: "likes/:id",component: LikesComponent},

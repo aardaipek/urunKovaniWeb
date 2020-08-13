@@ -15,7 +15,6 @@ export class CategoriesComponent implements OnInit {
   async getTopStoresShops() {
     let getTopStoresShops = await this.appService.getTopStoresShops();
     this.topStoresShops = getTopStoresShops;
-
   }
   ngOnInit(): void {
     this.getTopStoresShops();
@@ -23,7 +22,7 @@ export class CategoriesComponent implements OnInit {
 
   gotoShop(id){
       const ID = id ? id : null;
-      this.router.navigate(['/shop', { id: ID }]);
+      this.router.navigateByUrl("/shop/" + ID);
   }
 
 }

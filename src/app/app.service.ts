@@ -37,6 +37,12 @@ export class AppService {
    
     return response;
   }
+  
+  async getShopInfo(id) {
+    const response = await this.http.get(this.url + '/api/app/get_shop/'+ id).toPromise();
+   
+    return response;
+  }
 
   async getAppSettings() {
     const response = await this.http.get(this.url + '/api/app/app_settings/1').toPromise();
