@@ -32,6 +32,12 @@ export class AppService {
     return language
   }
 
+  async shopCategories() {
+    const response = await this.http.get(this.url + '/api/app/shop_categories').toPromise();
+   
+    return response;
+  }
+
   async getTopStoresShops() {
     const response = await this.http.get(this.url + '/api/app/top_stores_shops').toPromise();
    

@@ -8,16 +8,16 @@ import { AppService } from "../../../app.service"
 })
 export class FeaturedProductsComponent implements OnInit {
   shopMenu: object;
-  allShops: object;
+  shopCategories: object;
   activeMenuItem: string;
 
   constructor(public appService: AppService) { }
 
 
 
-  async getAllShops() {
-    let getAllShops = await this.appService.getAllShops();
-    this.allShops = getAllShops;
+  async getShopCategories() {
+    let getAllShops = await this.appService.shopCategories();
+    this.shopCategories = getAllShops;
 
   }
 
@@ -36,7 +36,7 @@ export class FeaturedProductsComponent implements OnInit {
   ngOnInit(): void {
     
     this.mainMenuGet();
-    this.getAllShops();
+    this.getShopCategories();
 
   }
 

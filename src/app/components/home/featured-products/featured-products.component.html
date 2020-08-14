@@ -8,7 +8,7 @@
 
                 <div class="featured__controls">
                     <ul>
-                        <li [ngClass]="{'active':activeMenuItem == menu.name}" data-filter=".oranges" (click)="activeMenuItemClick(menu.name)" *ngFor="let menu of shopMenu">{{menu.name}}</li>
+                        <li [ngClass]="{'active':activeMenuItem == categorie.category_name}" data-filter=".oranges" (click)="activeMenuItemClick(categorie.category_name)" *ngFor="let categorie of shopCategories">{{categorie.category_name}}</li>
                     </ul>
                 </div>
             </div>
