@@ -8,8 +8,8 @@
                     </div>
                     <div class="card-deck py-4">
                         <div class="card" *ngFor="let topStoresShop of topStoresShops"
-                        (click)="gotoShop(topStoresShop.id)">
-                          <img class="card-img-top zoom" src="{{topStoresShop.image}}" >
+                        >
+                          <img class="card-img-top zoom" (click)="gotoShop(topStoresShop.id)" src="{{topStoresShop.image}}" >
                           <div class="card-body">
                             <h5 class="card-title">{{topStoresShop.shop_name}}</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
