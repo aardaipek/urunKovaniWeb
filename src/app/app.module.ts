@@ -22,6 +22,7 @@ import { LikesComponent } from './components/likes/likes.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule,ReactiveFormsModule  }   from '@angular/forms';
 
 import { ToastrModule } from 'ngx-toastr';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
@@ -55,6 +56,8 @@ import { CheckoutSummaryComponent } from './components/checkout/checkout-summary
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       timeOut: 2000,
       positionClass: 'toast-bottom-right',
