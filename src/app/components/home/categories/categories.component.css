@@ -1,0 +1,12 @@
+.customCardLink{
+    cursor:pointer;
+    max-width: 30%;
+    margin-right: 2%;
+  }
+
+  .categories{
+    margin-top: 10%;
+    display: flex;
+    justify-content:center;
+    flex-wrap: column wrap;
+  }
