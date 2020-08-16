@@ -10,16 +10,18 @@ export class FeaturedProductsComponent implements OnInit {
   shopMenu: object;
   shopCategories: object;
   activeMenuItem: string;
+  allShops:any;
 
   constructor(public appService: AppService) { }
 
 
 
   async getShopCategories() {
-    let getAllShops = await this.appService.shopCategories();
-    this.shopCategories = getAllShops;
+    let getAllShops = await this.appService.getAllShops();
+    this.allShops = getAllShops;
 
   }
+  
 
 
   async mainMenuGet() {

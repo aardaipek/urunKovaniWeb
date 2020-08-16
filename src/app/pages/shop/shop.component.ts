@@ -26,6 +26,10 @@ export class ShopComponent implements OnInit {
     let shopsProducts = await this.appService.getShopsProducts(id);
     this.shopsProducts = shopsProducts
   }
+
+  sortProducts = (value) =>{
+    console.log(value);
+  }
   ngOnInit(): void {
     
   }

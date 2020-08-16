@@ -181,7 +181,7 @@
                             <span>Sort By</span>
                         </div>
                         <div class="col-sm-4">
-                            <select class="custom-select">
+                            <select (change)="sortProducts($event.target.value)" class="custom-select">
                                 <option value="0">Küçükten Büyüğe</option>
                                 <option value="1">Büyükten Küçüğe</option>
                             </select>                        </div>
