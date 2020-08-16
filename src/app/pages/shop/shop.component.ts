@@ -27,8 +27,9 @@ export class ShopComponent implements OnInit {
     this.shopsProducts = shopsProducts
   }
 
-  sortProducts = (value) =>{
-    console.log(value);
+  
+  async sortProducts(value){
+    this.shopsProducts = await this.appService.sortShopsProducts(parseInt(this.activatedRoute.url['value']['1']['path']),value)
   }
   ngOnInit(): void {
     

@@ -1,6 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Router } from "@angular/router";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpParams } from '@angular/common/http';
+
 import { ToastService } from './services/toast.service';
 
 @Injectable({
@@ -57,6 +58,15 @@ export class AppService {
   }
   async getAllShops() {
     const response = await this.http.get(this.url + '/api/app/all_shops').toPromise();
+   
+    return response;
+  }
+
+  async sortShopsProducts(id,sortId) {
+    let params = new HttpParams();
+    params = params.append('id', id);
+    params = params.append('sortId', sortId);
+    const response = await this.http.get(this.url + '/api/app/sort_shops_products',{params:params}).toPromise();
    
     return response;
   }
