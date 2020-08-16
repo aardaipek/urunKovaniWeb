@@ -52,6 +52,8 @@ export class AppService {
 
   async getShopsProducts(id) {
     const response = await this.http.get(this.url + '/api/app/get_shops_products/'+ id).toPromise();
+
+    return response;
   }
   async getAllShops() {
     const response = await this.http.get(this.url + '/api/app/all_shops').toPromise();

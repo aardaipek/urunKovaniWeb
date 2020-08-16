@@ -11,7 +11,7 @@ export class ShopComponent implements OnInit {
 
   shopId : number;
   shopInfo: object;
-  shopsProducts:object;
+  shopsProducts:any;
   constructor(public router : Router, public activatedRoute : ActivatedRoute, public appService : AppService) {
     let urlId = this.activatedRoute.url['value']['1']['path'];
     this.getShopInfo(parseInt(urlId));
@@ -24,10 +24,8 @@ export class ShopComponent implements OnInit {
   }
   async getShopsProducts(id){
     let shopsProducts = await this.appService.getShopsProducts(id);
-    this.shopsProducts = shopsProducts;
+    this.shopsProducts = shopsProducts
   }
-
-
   ngOnInit(): void {
     
   }
