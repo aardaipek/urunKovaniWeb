@@ -32,6 +32,12 @@ export class AppService {
     return language
   }
 
+  async shopCategories() {
+    const response = await this.http.get(this.url + '/api/app/shop_categories').toPromise();
+   
+    return response;
+  }
+
   async getTopStoresShops() {
     const response = await this.http.get(this.url + '/api/app/top_stores_shops').toPromise();
    
@@ -46,6 +52,9 @@ export class AppService {
 
   async getShopsProducts(id) {
     const response = await this.http.get(this.url + '/api/app/get_shops_products/'+ id).toPromise();
+  }
+  async getAllShops() {
+    const response = await this.http.get(this.url + '/api/app/all_shops').toPromise();
    
     return response;
   }
