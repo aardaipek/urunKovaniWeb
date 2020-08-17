@@ -10,18 +10,25 @@ export class FeaturedProductsComponent implements OnInit {
   shopMenu: object;
   shopCategories: object;
   activeMenuItem: string;
-  allShops:any;
+  allShops: any;
+  systemCategories: object;
+  shopFilterObj: object;
 
   constructor(public appService: AppService) { }
 
 
 
   async getShopCategories() {
-    let getAllShops = await this.appService.getAllShops();
+    let getAllShops = await this.appService.ShopsAndSystemCategories();
     this.allShops = getAllShops;
 
   }
-  
+
+  async getSystemCategories() {
+    let systemCategories = await this.appService.SystemCategories();
+    this.systemCategories = systemCategories;
+
+  }
 
 
   async mainMenuGet() {
@@ -31,14 +38,26 @@ export class FeaturedProductsComponent implements OnInit {
 
   }
 
-  activeMenuItemClick(item) {
+  activeMenuItemClick(item, categoryId) {
     this.activeMenuItem = item;
+    const shopFilterArray = [];
+
+    this.allShops.filter(function (shop) {
+      if (shop.system_category.id == categoryId) {
+        shopFilterArray.push(shop);
+      }
+    });
+
+    this.shopFilterObj = shopFilterArray;
+
   }
 
   ngOnInit(): void {
-    
+    this.activeMenuItem = "Market";
+
     this.mainMenuGet();
     this.getShopCategories();
+    this.getSystemCategories();
 
   }
 

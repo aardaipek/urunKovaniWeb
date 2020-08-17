@@ -8,7 +8,7 @@
 
                 <div class="featured__controls">
                     <ul>
-                        <li [ngClass]="{'active':activeMenuItem == categorie.category_name}" data-filter=".oranges" (click)="activeMenuItemClick(categorie.category_name)" *ngFor="let categorie of shopCategories">{{categorie.category_name}}</li>
+                        <li [ngClass]="{'active':activeMenuItem == categorie.category_name}" data-filter=".oranges" (click)="activeMenuItemClick(categorie.category_name,categorie.id)" *ngFor="let categorie of systemCategories">{{categorie.category_name}}</li>
                     </ul>
                 </div>
             </div>
@@ -19,7 +19,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                 <div class="featured__item" style="cursor: pointer;">
                     <a href="detail/1">             
-                        <div class="featured__item__pic set-bg" *ngFor="let shop of shopCategories"
+                        <div class="featured__item__pic set-bg" *ngFor="let shop of shopFilterObj"
                         style="background: url({{shop.image}})">
                             <ul class="featured__item__pic__hover">
                                 <li (click)="appService.addLike();"><a href="#0"><i class="fa fa-heart"
@@ -27,11 +27,12 @@
                                 <li (click)="appService.addBasket();"><a href="#0"><i class="fa fa-shopping-cart"
                                             style="cursor:pointer"></i></a></li>
                             </ul>
+                            <div class="featured__item__text">
+                                <h6><a href="#">{{shop.shop_name}}</a></h6>
+                            </div>
                         </div>
                     </a>
-                    <!-- <div class="featured__item__text">
-                        <h6><a href="#">a</a></h6>
-                    </div> -->
+                   
                 </div>
             </div>
             

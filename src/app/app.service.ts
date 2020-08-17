@@ -44,6 +44,12 @@ export class AppService {
    
     return response;
   }
+
+  async SystemCategories() {
+    const response = await this.http.get(this.url + '/api/app/system_categories').toPromise();
+   
+    return response;
+  }
   
   async getShopInfo(id) {
     const response = await this.http.get(this.url + '/api/app/get_shop/'+ id).toPromise();
@@ -56,8 +62,8 @@ export class AppService {
 
     return response;
   }
-  async getAllShops() {
-    const response = await this.http.get(this.url + '/api/app/all_shops').toPromise();
+  async ShopsAndSystemCategories() {
+    const response = await this.http.get(this.url + '/api/app/shop_and_system_categories').toPromise();
    
     return response;
   }
