@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppService } from "../../../app.service"
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 
 @Component({
@@ -15,11 +17,19 @@ export class HeroComponent {
   url: string;
   likeCount: number;
   homePage: boolean;
-  
+  loginButtonChangeToSignOut: Boolean = false;
+  usertoken: any;
 
-  constructor(private http: HttpClient, public appService: AppService, public route: ActivatedRoute, private router: Router) {
+  constructor(
+    private http: HttpClient, 
+    public appService: AppService, 
+    public route: ActivatedRoute, 
+    private router: Router, 
+    public auth: AuthService,
+    private toast: ToastService) 
+    {
 
-  }
+    }
 
   async sideMenuGet() {
     let appSettings = await this.appService.getAppSettings();
@@ -47,10 +57,19 @@ export class HeroComponent {
     }
     else {
       this.homePage = false;
-
     }
-   
+
+    this.usertoken = this.auth.isUserLogged();
+    if (this.usertoken != null) {
+      this.loginButtonChangeToSignOut = true;
+    }
+
     // this.router.config //  tanımlı bütün routeları döner
+  }
+
+  logout() {
+    this.auth.logoutUser();
+    this.toast.succesProcess("Çıkış Yapıldı")
   }
 
 
@@ -59,7 +78,7 @@ export class HeroComponent {
     if (popover.isOpen()) {
       popover.close();
     } else {
-      popover.open({greeting, language});
+      popover.open({ greeting, language });
     }
   }
 

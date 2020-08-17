@@ -1,5 +1,7 @@
 import { Component , EventEmitter, Output } from '@angular/core';
 import {AppService} from "../app/app.service"
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -11,7 +13,9 @@ export class AppComponent {
   message : string;
   sideMenu : object;
   culture: string = "";
-  constructor(public appService : AppService) { 
+ 
+
+  constructor(public appService : AppService,public auth: AuthService) { 
     
   }
   
@@ -25,9 +29,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.getAppSettings();
-    this.message="atakan";
     
-
   }
 
 }

@@ -55,8 +55,13 @@
                                     <span>{{appService.basketCount}}</span></a></li>
                         </ul>
                         <div class="header__top__right__auth" style="padding-left: 3%;">
-                            <a [routerLink]="'/login'"><i class="fa fa-user"></i> Giriş Yap</a>
+                            <a [routerLink]="'/login'" *ngIf="!loginButtonChangeToSignOut; else elseBlock"><i class="fa fa-user"></i> Giriş Yap</a>
                         </div>
+                        <ng-template #elseBlock>
+                            <div class="header__top__right__auth" style="padding-left: 3%;">
+                                <a style="cursor: pointer" (click)="logout()" *ngIf="loginButtonChangeToSignOut"><i class="fa fa-user"></i> Çıkış </a>
+                            </div>
+                        </ng-template>
                     </div>
                 </div>
 

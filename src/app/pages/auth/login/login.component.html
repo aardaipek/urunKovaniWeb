@@ -10,18 +10,18 @@
                         </div>
 
                         <hr class="my-4">
-                        <form class="form-signin">
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" class="form-signin">
                             <div class="row justify-content-md-center">
                                 
                                 <div class="col col-md-12">
                                     <div class="form-label-group">
-                                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
-                                            required autofocus>
+                                        <input type="email" formControlName="inputEmail" id="inputEmail"
+                                            class="form-control" placeholder="Eposta" required>
                                         <label for="inputEmail">Eposta</label>
                                     </div>
                                     <div class="form-label-group">
-                                        <input type="password" id="inputPassword" class="form-control"
-                                            placeholder="Password" required>
+                                        <input type="password" formControlName="inputPassword" id="inputPassword"
+                                            class="form-control" placeholder="Şifre" required>
                                         <label for="inputPassword">Şifre</label>
                                     </div>
     
