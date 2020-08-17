@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastService } from 'src/app/services/toast.service';
+import { AuthService } from 'src/app/services/auth.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,25 +11,57 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  registerForm:FormGroup;
+  registerForm: FormGroup;
+  memberType:String;
+  inputPassword:String;
+  inputEmail:String;
+  inputLastname:String;
+  inputName:String;
+  acceptLaw:Boolean;
 
-  constructor(private formBuilder: FormBuilder) {
+
+  constructor(private formBuilder: FormBuilder, private toast: ToastService,private auth:AuthService) {
     this.registerForm = this.formBuilder.group({
-      optionStore: '',
-      optionSME: '',
+      memberType:"",
       inputPassword: "",
-      inputEmail:'',
-      inputLastname:'',
-      inputName:'',
-      acceptLaw:false
+      inputEmail: "",
+      inputLastname: "",
+      inputName: "",
+      acceptLaw: false
     });
-   }
+  }
 
   ngOnInit(): void {
   }
 
   onSubmit(data) {
-    console.log(data)
+    console.log(JSON.stringify(data))
+    this.inputEmail = data.inputEmail;
+    this.inputPassword = data.inputPassword;
+    this.inputLastname =  data.inputLastname;
+    this.inputName = data.inputName;
+    this.acceptLaw = data.acceptLaw;
+    this.memberType = this.setMemberType()
+
+    const regObject = {
+      name : this.inputName,
+      lastname : this.inputLastname,
+      password : this.inputPassword,
+      email : this.inputEmail,
+      acceptRule : this.acceptLaw,
+      memberType : this.memberType
+    };
+    this.auth.regsiterUser(regObject);
+  }
+
+  onItemChange(item) {
+    console.log(item)
+    this.memberType = item;
+  }
+
+  setMemberType() {
+    let _memberType = this.memberType;
+    return _memberType;
   }
 
 }
