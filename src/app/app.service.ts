@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Router } from "@angular/router";
 import { HttpClient,HttpParams } from '@angular/common/http';
-
+import { AuthService } from 'src/app/services/auth.service';
 import { ToastService } from './services/toast.service';
 
 @Injectable({
@@ -17,7 +17,8 @@ export class AppService {
     public ngZone: NgZone,
     public http: HttpClient,
     public route: Router,
-    private toast: ToastService
+    private toast: ToastService,
+    public auth: AuthService
   ) {
     this.url = 'https://localhost:44388';
     this.basketCount = 0;
@@ -87,13 +88,29 @@ export class AppService {
   }
 
   addBasket() {
-    this.basketCount++;
+    
+    if (this.auth.isUserLogged()) {
+      this.basketCount++;
     this.toast.succesProcess("Ürün sepetinize eklendi.")
+    }
+    else{
+      this.toast.errorProcess("Öncelikle giriş yapmalısınız.")
+
+    }
   }
 
   addLike() {
-    this.likeCount++;
-    this.toast.succesProcess("Ürün beğeni listenize eklendi.")
+    
+    if (this.auth.isUserLogged()) {
+      this.likeCount++;
+      this.toast.succesProcess("Ürün beğeni listenize eklendi.")
+    }
+    else{
+      this.toast.errorProcess("Öncelikle giriş yapmalısınız.")
+
+    }
+
+   
   }
 
 }
