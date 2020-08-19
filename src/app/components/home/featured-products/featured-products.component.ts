@@ -21,12 +21,17 @@ export class FeaturedProductsComponent implements OnInit {
   async getShopCategories() {
     let getAllShops = await this.appService.ShopsAndSystemCategories();
     this.allShops = getAllShops;
+    let shopFilterFirst = [];
+    shopFilterFirst.push(this.allShops[0]);
+    this.shopFilterObj = shopFilterFirst;
+
 
   }
 
   async getSystemCategories() {
     let systemCategories = await this.appService.SystemCategories();
     this.systemCategories = systemCategories;
+    this.activeMenuItem = this.systemCategories[0]["category_name"];
 
   }
 
@@ -34,7 +39,6 @@ export class FeaturedProductsComponent implements OnInit {
   async mainMenuGet() {
     let appSettings = await this.appService.getAppSettings();
     this.shopMenu = appSettings["shop_menu"];
-    this.activeMenuItem = this.shopMenu[0]["name"];
 
   }
 
@@ -53,7 +57,6 @@ export class FeaturedProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activeMenuItem = "Market";
 
     this.mainMenuGet();
     this.getShopCategories();
